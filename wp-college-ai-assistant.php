@@ -84,9 +84,6 @@ class WPCollegeAIAssistant {
             update_option('wp_college_ai_assistant_api_key', sanitize_text_field($_POST['api_key']));
             echo '<div class="updated"><p>Settings saved.</p></div>';
         }
-
-        $api_url = get_option('wp_college_ai_assistant_api_url', 'http://10.0.1.25/api/generate');
-        $api_key = get_option('wp_college_ai_assistant_api_key', 'supersecretapikey');
         ?>
         <div class="wrap">
             <h1>WP College AI Assistant Settings</h1>
@@ -94,11 +91,11 @@ class WPCollegeAIAssistant {
                 <table class="form-table">
                     <tr>
                         <th scope="row"><label for="api_url">API URL</label></th>
-                        <td><input name="api_url" type="text" id="api_url" value="<?php echo esc_attr($api_url); ?>" class="regular-text"></td>
+                        <td><input name="api_url" type="text" id="api_url" value="<?php echo esc_attr(API_URL); ?>" class="regular-text"></td>
                     </tr>
                     <tr>
                         <th scope="row"><label for="api_key">API Key</label></th>
-                        <td><input name="api_key" type="text" id="api_key" value="<?php echo esc_attr($api_key); ?>" class="regular-text"></td>
+                        <td><input name="api_key" type="text" id="api_key" value="<?php echo esc_attr(API_KEY); ?>" class="regular-text"></td>
                     </tr>
                 </table>
                 <?php submit_button(); ?>
@@ -138,9 +135,6 @@ class WPCollegeAIAssistant {
 
 // Initialize the plugin
 new WPCollegeAIAssistant();
-
-// Use the settings in the ollama_stream file
-require_once plugin_dir_path(__FILE__) . 'config.php';
 
 // Use multisite-compatible functions for settings
 if (is_multisite()) {
