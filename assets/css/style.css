@@ -1,0 +1,270 @@
+/* Scoped styles for the plugin */
+.wp-college-ai-assistant {
+  /* Base theme */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.wp-college-ai-assistant .chat-container {
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, color 0.3s;
+}
+
+.wp-college-ai-assistant #chat-messages {
+  height: 450px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: background 0.3s;
+}
+
+.wp-college-ai-assistant .user-message,
+.wp-college-ai-assistant .bot-message {
+  padding: 10px 14px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  animation: wp-college-ai-assistant-messageAppear 0.25s ease-out;
+}
+
+.wp-college-ai-assistant .user-message {
+  align-self: flex-end;
+  max-width: 75%;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 14px 14px 4px;
+}
+
+.wp-college-ai-assistant .bot-message {
+  align-self: flex-start;
+}
+
+/* Scoped input area */
+.wp-college-ai-assistant .input-area {
+  display: flex;
+  gap: 10px;
+}
+
+.wp-college-ai-assistant #question-input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.wp-college-ai-assistant #ask-button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: none;
+}
+
+/* Scoped loader */
+.wp-college-ai-assistant #loader {
+  padding: 10px;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.wp-college-ai-assistant .hidden {
+  display: none;
+}
+
+/* Scoped animations */
+@keyframes wp-college-ai-assistant-messageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scoped theme switch */
+.wp-college-ai-assistant .theme-switch {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.wp-college-ai-assistant .switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.wp-college-ai-assistant .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.wp-college-ai-assistant .slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 24px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+.wp-college-ai-assistant .slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.wp-college-ai-assistant input:checked + .slider {
+  background-color: #577390;
+}
+
+.wp-college-ai-assistant input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Scoped dark mode */
+.wp-college-ai-assistant.dark-mode {
+  background-color: #1e1e2f;
+  color: #f5f5f5;
+}
+
+.wp-college-ai-assistant.dark-mode .chat-container {
+  background-color: #2b2b3c;
+}
+
+.wp-college-ai-assistant.dark-mode #chat-messages {
+  background-color: #1a1a28;
+}
+
+.wp-college-ai-assistant.dark-mode .user-message {
+  background-color: #577390;
+  color: white;
+}
+
+.wp-college-ai-assistant.dark-mode .bot-message {
+  color: #e0e0e0;
+}
+
+.wp-college-ai-assistant.dark-mode #question-input {
+  background-color: #2b2b3c;
+  color: #f5f5f5;
+  border: 1px solid #555;
+}
+
+.wp-college-ai-assistant.dark-mode #ask-button {
+  background-color: #577390;
+  color: white;
+}
+
+.wp-college-ai-assistant.dark-mode #ask-button:hover {
+  background-color: #326dd8;
+}
+
+.wp-college-ai-assistant.dark-mode #loader {
+  color: #aaa;
+}
+
+/* Scoped light mode */
+.wp-college-ai-assistant.light-mode {
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+.wp-college-ai-assistant.light-mode .chat-container {
+  background-color: white;
+}
+
+.wp-college-ai-assistant.light-mode #chat-messages {
+  background-color: #fefefe;
+  border: 1px solid #ccc;
+}
+
+.wp-college-ai-assistant.light-mode .user-message {
+  background-color: #577390;
+  color: white;
+}
+
+.wp-college-ai-assistant.light-mode .bot-message {
+  color: #222;
+}
+
+.wp-college-ai-assistant.light-mode #question-input {
+  background-color: white;
+  color: #222;
+  border: 1px solid #ccc;
+}
+
+.wp-college-ai-assistant.light-mode #ask-button {
+  background-color: #577390;
+  color: white;
+}
+
+.wp-college-ai-assistant.light-mode #ask-button:hover {
+  background-color: #0056b3;
+}
+
+.wp-college-ai-assistant.light-mode #loader {
+  color: #333;
+}
+
+/* Scoped code block styling */
+.wp-college-ai-assistant pre {
+  background-color: #f6f8fa;
+  border-radius: 6px;
+  padding: 16px;
+  overflow: auto;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 85%;
+  line-height: 1.45;
+  margin: 8px 0;
+  border: 1px solid #e1e4e8;
+}
+
+.wp-college-ai-assistant code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  background-color: rgba(27,31,35,0.05);
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+  font-size: 85%;
+}
+
+.wp-college-ai-assistant pre > code {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+.wp-college-ai-assistant.dark-mode pre {
+  background-color: #161b22;
+  border-color: #30363d;
+}
+
+.wp-college-ai-assistant.dark-mode code {
+  background-color: rgba(110,118,129,0.4);
+}
